@@ -1,3 +1,5 @@
 # MellyBot-2.0
 
-This is a banger that's all I can say
+Inside joke bot made about me for my friends to use.
+
+Discord.py used.
