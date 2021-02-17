@@ -7,7 +7,7 @@ import random
 os.chdir('C:\\Users\\Celeste\\Desktop\\Discord Bots\\MellyBot 2.0')
 
 #Client variable
-client = commands.Bot(command_prefix = 'mb.', case_insensitive=True)
+client = commands.Bot(command_prefix = 'mb.')
 
 #Bot start-up message
 @client.event
@@ -15,12 +15,14 @@ async def on_ready():
     await client.change_presence(activity=discord.Game('mb.help | MellyBot 2.0'))
     print('MellyBot 2.0 is ready to go.')
 
+#Error handling
 @client.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
-        await ctx.send(f"{ctx.author.name}: The command you entered does not exist")
+        await ctx.send(f"{ctx.author.mention}: The command you entered does not exist")
     if isinstance(error, commands.MissingPermissions):
-        await ctx.send(f"{ctx.author.name}: You do not have permission to use that command")
+        await ctx.send(f"{ctx.author.mention}: You do not have permission to use that command")
+    raise error
 
 #Loads a cog
 @client.command()
@@ -50,5 +52,5 @@ for filename in os.listdir('./cogs'):
         client.load_extension(f'cogs.{filename[:-3]}')
 
 #Client token
-token = #No token for you
-client.run(token)
+DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
+client.run(DISCORD_TOKEN)
