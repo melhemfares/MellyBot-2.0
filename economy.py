@@ -31,7 +31,7 @@ except:
     stocks_up = False
     print('Stock API reached its limit, wait a minute and try again (5 calls/minute, 500 calls/day)')
 
-os.chdir('C:\\Users\\Celeste\\Desktop\\Discord Bots\\MellyBot 2.0\\cogs')
+os.chdir('C:\\Users\\fares\\Desktop\\Discord Bots\\MellyBot 2.0\\cogs')
 
 mainshop = [{'name':'MellyCoin','emoji':':coin:','price':10,'description':'Just a prop'},
             {'name':'Bomb','emoji':':bomb:','price':200,'description':'Clap someone up'},
