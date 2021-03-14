@@ -48,7 +48,7 @@ internet = [{'name':'Four_Leaf_Clover','emoji':':four_leaf_clover:','price':2000
 if stocks_up:
     stocks_list = [{'name':'MLLY','price':int(mlly['1. open'][0]),'description':'MellyCoin'},
                    {'name':'BNGR','price':int(bngr['1. open'][0]),'description':'Banger Inc.'},
-                   {'name':'CLYN','price':int(clyn['1. open'][0]),'description':'Cailyn Corp.'},
+                   {'name':'ZYRN','price':int(clyn['1. open'][0]),'description':'Zyrien Corp.'},
                    {'name':'YTL','price':int(ytl['1. open'][0]),'description':'YouTube Leb'}]
 
     bitcoin_price = int(btc['1a. open (CAD)'][0])
