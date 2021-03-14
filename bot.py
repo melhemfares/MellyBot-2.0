@@ -4,7 +4,7 @@ import os
 import json
 import random
 
-os.chdir('C:\\Users\\Celeste\\Desktop\\Discord Bots\\MellyBot 2.0')
+os.chdir('C:\\Users\\fares\\Desktop\\Discord Bots\\MellyBot 2.0')
 
 #Client variable
 client = commands.Bot(command_prefix = 'mb.')
