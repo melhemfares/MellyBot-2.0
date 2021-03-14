@@ -7,7 +7,7 @@ import random
 import os
 from .economy import *
 
-os.chdir('C:\\Users\\Celeste\\Desktop\\Discord Bots\\MellyBot 2.0\\cogs')
+os.chdir('C:\\Users\\fares\\Desktop\\Discord Bots\\MellyBot 2.0\\cogs')
 
 class Profile(commands.Cog):
 
@@ -26,6 +26,7 @@ class Profile(commands.Cog):
     async def claim(self, ctx):
 
         await open_account(ctx.author)
+        await open_profile(ctx.author)
         users = await get_bank_data()
         user = ctx.author
 
@@ -114,8 +115,6 @@ async def get_profile_data():
 #Updates bank data in the .json file
 async def update_profile(user, change=0, mode='experience'):
     users = await get_profile_data()
-
-    users[str(user.id)][mode] += change
 
     with open('user_profile.json', 'w') as f:
         json.dump(users, f)
