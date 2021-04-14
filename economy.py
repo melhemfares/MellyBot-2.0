@@ -43,7 +43,7 @@ mainshop = [{'name':'MellyCoin','emoji':':coin:','price':10,'description':'Just 
 internet = [{'name':'Four_Leaf_Clover','emoji':':four_leaf_clover:','price':20000,'description':'Get luckier with mb.search'},
             {'name':'Bitcoin_ASIC','emoji':':pick:','price':25000,'description':'Allows you to mine bitcoin'},
             {'name':'Bomb_Shelter','emoji':':house:','price':30000,'description':'Protects you against bombs'},
-            {'name':'Edmonds_Taxi','emoji':':oncoming_taxi:','price':100000,'description':'Slam into people Arab style'}]
+            {'name':'Edmonds_Taxi','emoji':':oncoming_taxi:','price':100000,'description':'Slam into people and make them lose big money'}]
 
 if stocks_up:
     stocks_list = [{'name':'MLLY','price':int(mlly['1. open'][0]),'description':'MellyCoin'},
@@ -661,7 +661,7 @@ class Economy(commands.Cog):
                 await update_bank(member, losses*-1)
 
                 await ctx.send(':boom: :taxi:')
-                await ctx.send(f'{member.mention} you got slammed into by {ctx.author.mention} and lost {losses}MM. Kol khara ya hmar.')
+                await ctx.send(f'{member.mention} you got slammed into by {ctx.author.mention} and lost {losses}MM. Take that!.')
 
                 if bal[0] < losses:
                     users[str(user.id)]['wallet'] = 0
@@ -859,7 +859,7 @@ class Economy(commands.Cog):
                 else:
                     await update_bank(member, losses*-1)
 
-                await ctx.send(f'{member.mention} you got bombed by {ctx.author.mention} and lost {losses}MM. Take that you capitalist.')
+                await ctx.send(f'{member.mention} you got bombed by {ctx.author.mention} and lost {losses}MM. Kablam!.')
 
                 if bal[0] < losses:
                     users[str(user.id)]['wallet'] = 0
@@ -1223,14 +1223,14 @@ async def open_account(user):
         return False
     else:
         users[str(user.id)] = {}
-        users[str(user.id)]['wallet'] = 1000000
-        users[str(user.id)]['bank'] = 1000000
-        users[str(user.id)]['grind'] = 100
-        users[str(user.id)]['math'] = 100
-        users[str(user.id)]['time'] = 10
+        users[str(user.id)]['wallet'] = 0
+        users[str(user.id)]['bank'] = 0
+        users[str(user.id)]['grind'] = 1
+        users[str(user.id)]['math'] = 1
+        users[str(user.id)]['time'] = 0
         users[str(user.id)]['laptop'] = False
-        users[str(user.id)]['bitcoin'] = 10.0000
-        users[str(user.id)]['asic'] = 10
+        users[str(user.id)]['bitcoin'] = 0.0000
+        users[str(user.id)]['asic'] = 0
         users[str(user.id)]['taxi'] = False
         users[str(user.id)]['bomb_shelter'] = False
 
